@@ -1,0 +1,93 @@
+#switcher-body .container {
+	background:#fff;
+	margin:50px auto;
+	border:1px solid #dedede;
+	padding:40px;
+}
+.demo_changer{ 
+    z-index: 1000; 
+    position: fixed;
+    left: -161px;
+    top: 210px; 
+    font-weight: 400 !important;
+}
+.demoPanel {
+	position:relative;
+}
+.demo_changer p {
+	margin:10px 0;
+}
+.demo_changer .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	background:#fff;
+}
+.demo_changer h4 {
+	margin:10px 0 !important;
+	color: #545454 !important;
+	text-transform:none !important;
+	font-family: 'PT Sans',sans-serif;
+}
+
+.demo_changer hr {
+	border-color:#E0E0E0;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+.demo_changer,
+.demo_changer p {
+	color:#545454 !important;
+}
+.demo_changer h4 {
+	color:#212121 !important;
+    font-size: 14px;
+    padding-bottom: 0;
+}
+.demo_changer i {
+	color:#fff;
+	font-size:21px;
+}
+.demo_changer .demo-icon{
+    cursor: pointer;
+	text-align:center;
+    background:#B9C0C4;
+	padding:2px;
+    float: right;
+    height: 40px;
+	line-height:40px;
+	-webkit-border-radius:0 20px 20px 0;
+	-moz-border-radius:0 20px 20px 0;
+	border-radius:0 20px 20px 0;
+    width:40px;
+}
+.demo_changer .form_holder {
+	background-color:#fff;
+    cursor: pointer;
+    font-size: 12px;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.07);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.07);
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.07);
+    float: right;
+    padding: 20px;
+    width: 154px;
+}
+.demo_changer .form_holder p{
+    font-size: 12px;
+}
+.demoPanel {
+    margin: 0;
+    padding: 0;
+    width: 125px;
+}
+.predefined_styles{
+    padding:0 5px;
+}
+
+.predefined_styles a{
+    font-family: 'Raleway';
+    color: #272727;
+}
+
+@media only screen and (max-width: 768px) {
+	.demo_changer{
+	    top:8px;
+	}
+} 
