@@ -22,6 +22,10 @@ group :development, :test do
   gem 'web-console', '2.0.0.beta3'
   gem 'spring', '1.1.3'
   gem 'sqlite3', '1.3.9'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
 group :production do
