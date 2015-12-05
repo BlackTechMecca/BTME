@@ -18,16 +18,24 @@ RSpec.describe JobPosting, :type => :model do
 
   end
 
-  it "validates that it is associated with a user" do
-    invalid_post = JobPosting.create(:title => "Employee wanted",
-                                     :description => "To do stuff!")
-    expect(invalid_post).to_not be_valid
-  end
+  describe "validations" do
+    it "validates that it is associated with a user" do
+      invalid_post = JobPosting.create(:title => "Employee wanted",
+                                       :description => "To do stuff!")
+      expect(invalid_post).to_not be_valid
+    end
 
-  it "validates that it has a title" do
-    invalid_post = JobPosting.create(:user => FactoryGirl.create(:user),
-                                     :description => "To do stuff!")
-    expect(invalid_post).to_not be_valid
+    it "validates that it has a title" do
+      invalid_post = JobPosting.create(:user => FactoryGirl.create(:user),
+                                       :description => "To do stuff!")
+      expect(invalid_post).to_not be_valid
+    end
+
+    it "validates that it has a description" do
+      invalid_post = JobPosting.create(:title => "Employee wanted",
+                                       :user => FactoryGirl.create(:user))
+      expect(invalid_post).to_not be_valid
+    end
   end
 
   it "creates a an associated activity" do

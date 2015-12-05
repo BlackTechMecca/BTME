@@ -1,5 +1,6 @@
 class Activity < ActiveRecord::Base
   belongs_to :postable, :polymorphic => true
+  validates :postable, :presence => true
 
   def preview
     self.postable.preview
