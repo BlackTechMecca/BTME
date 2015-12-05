@@ -1,4 +1,6 @@
 class JobPosting < ActiveRecord::Base
+  include Postable
+
   belongs_to :user
   has_one :activity, 
           :as => :postable,
@@ -7,11 +9,4 @@ class JobPosting < ActiveRecord::Base
   validates :user_id, :title, :description, :presence => true
 
   after_save :_create_activity
-
-  def _create_activity
-    Activity.create(
-      :postable_id => self.id,
-      :postable_type => "JobPosting"
-    )
-  end
 end
