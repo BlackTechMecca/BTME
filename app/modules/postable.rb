@@ -5,4 +5,8 @@ module Postable
       :postable_type => self.class,
     )
   end
+
+  def preview
+    raise NotImplementedError
+  end
 end

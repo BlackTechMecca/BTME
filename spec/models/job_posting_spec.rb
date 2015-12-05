@@ -30,13 +30,13 @@ RSpec.describe JobPosting, :type => :model do
     expect(invalid_post).to_not be_valid
   end
 
-  it "validates that it has a description" do
-    invalid_post = JobPosting.create(:title => "Employee wanted",
-                                     :user => FactoryGirl.create(:user))
-    expect(invalid_post).to_not be_valid
+  it "creates a an associated activity" do
+    expect(job_posting.activity).to be_an Activity
   end
 
-  it "creates a has an associated activity" do
-    expect(job_posting.activity).to be_an Activity
+  describe "#preview" do
+    it "displays the title and start of description" do
+      expect(job_posting.preview).to eq("Software Engineer - Build great soft... (posted by Jack)")
+    end
   end
 end
