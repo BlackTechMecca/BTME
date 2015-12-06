@@ -21,7 +21,6 @@ RSpec.describe JobPostingsController, :type => :controller do
       expect(response.status).to be 200
       posting = assigns(:job_posting)
       expect(posting.title).to eq("Developer")
-      expect(response).to match(/Developer/)
     end
   end
 end
