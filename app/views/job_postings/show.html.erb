@@ -1,2 +1,4 @@
 <h1><%= @job_posting.title %></h2>
-<p><%= @job_posting.description %></p>
+<p>Job posted by: <%= @job_posting.poster_name %></p>
+<p>Posted on: <%= @job_posting.created_at%></p>
+<p>Description: <%= @job_posting.description %></p>
