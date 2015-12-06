@@ -1,5 +1,6 @@
 <ul>
   <% @recent_activities.each do |activity| %>
-  <li><%= activity.preview %></li>
+  <li><%= activity.preview %> [ See <%= link_to(activity.postable_type,
+  activity.path_to_postable) %> ]</li>
   <% end %>
 </ul>
