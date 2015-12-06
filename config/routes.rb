@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   resources :job_postings
-  resources :activities
   devise_for :users, controllers: { sessions: "users/sessions" }
   get 'test/home'
+
+  get 'activity', to: 'activities#index'
 
   root 'home#index'
 
