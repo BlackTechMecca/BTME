@@ -1,0 +1,5 @@
+<ul>
+  <% @job_postings.each do |posting| %>
+  <li><%= posting.title %><%= link_to(posting) %></li>
+  <% end %>
+</ul>
