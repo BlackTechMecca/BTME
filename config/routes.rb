@@ -6,7 +6,7 @@
 
   get 'activity', to: 'activities#index'
 
-  resources :events, only: [:show,:index]
+  resources :events, only: [:show,:index,:create]
 
   root 'home#index'
 
