@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
 
   resources :job_postings
   devise_for :users, controllers: { sessions: "users/sessions" }

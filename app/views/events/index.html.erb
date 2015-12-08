@@ -1,11 +1,12 @@
 <div class="container">
-	<% @events.each do |event|  %>
-		<ul>
-			<li>
-				<h2><%= event.name %></h2>
-				<h4><%= event.description%></h4>
-				<h6><%= event.user.full_name %>
-			</li>
-		</ul>
-	<% end %>
+	<ul>
+		<% @events.each do |event|  %>
+				<li>
+					<h2><%= event.name %></h2>
+					<h4><%= event.description%></h4>
+					<h6><%= event.user.full_name %></h6>
+				</li>
+			</ul>
+		<% end %>
+	</ul>
 </div>
