@@ -7,6 +7,8 @@ RSpec.describe EventsController, :type => :controller do
 			get :index
 
 			expect(response.status).to be 200
+			event_hits = assigns(:events)
+			expect(event_hits.count).to eq(10)
 		end
 	end
 end
