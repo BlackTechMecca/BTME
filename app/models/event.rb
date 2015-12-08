@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
 	include Postable
 
-	belongs_to :poster, class_name: "User", foreign_key: "user_id"
+	belongs_to :user
 
 	has_one :activity, 
 			:as => :postable,
