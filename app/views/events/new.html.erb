@@ -1,6 +1,28 @@
-<%= form_for @event, url: {action: "create"} do |f| %>
-	<%= f.text_field :name %>
-	<%= f.text_area :description %>
-	<%= f.date :date %>
-	<%= f.submit "Add event!" %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 mt40">
+			<h3 class="text-center no-margin mb20-xs">Event</h3>
+			<hr class="double-hr hidden-xs mt20 mb30" style="width:556px;">
+			<div class="col-sm-12">
+				<%= form_for @event, url: {action: "create"}, :html => {class: 'form-horizontal'} do |f| %>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Name</label>
+					<%= f.text_field :name %>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Description</label>
+					<%= f.text_area :description %>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Date</label>
+					<%= f.date_field :date %>
+				</div>
+				<div class="col-sm-7 col-sm-offset-3">
+					<hr class="mt15 mb15">
+					<label><%= f.submit "Add event!" %></label>
+				</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>	
