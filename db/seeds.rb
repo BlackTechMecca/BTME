@@ -9,3 +9,7 @@
 15.times do
   FactoryGirl.create(:job_posting)
 end
+
+15.times do
+	FactoryGirl.create(:event)
+end
