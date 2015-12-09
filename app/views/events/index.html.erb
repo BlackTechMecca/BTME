@@ -1,0 +1,19 @@
+
+<!-- <button type="button" class="btn btn-info btn-lg" id="#addEventModal">Add An Event</button> -->
+
+<!-- <#%= link_to "Add an Event!" class: "btn btn-lg" new_event_path %> -->
+
+
+
+<div class="container">
+	<ul>
+		<% @events.each do |event|  %>
+				<li>
+					<h2><%= event.name %></h2>
+					<h4><%= event.description%></h4>
+					<h6><%= event.user.full_name %></h6>
+				</li>
+			</ul>
+		<% end %>
+	</ul>
+</div>

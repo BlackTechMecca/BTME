@@ -1,10 +1,12 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
 
   resources :job_postings
   devise_for :users, controllers: { sessions: "users/sessions" }
   get 'test/home'
 
   get 'activity', to: 'activities#index'
+
+  resources :events, only: [:show,:index,:create, :new]
 
   root 'home#index'
 

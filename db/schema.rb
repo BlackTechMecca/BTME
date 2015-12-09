@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205180456) do
+ActiveRecord::Schema.define(version: 20151207223231) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "postable_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20151205180456) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
 
   create_table "job_postings", force: :cascade do |t|
     t.text     "title"
