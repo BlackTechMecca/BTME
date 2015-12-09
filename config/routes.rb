@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :job_postings
-  devise_for :users, controllers: { sessions: "users/sessions" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
   get 'test/home'
 
   get 'activity', to: 'activities#index'

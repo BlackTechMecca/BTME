@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151205180456) do
+ActiveRecord::Schema.define(version: 20151209002716) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "postable_id"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20151205180456) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid"
+    t.string   "image_url"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
