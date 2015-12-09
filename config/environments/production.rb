@@ -74,6 +74,10 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+
+  ENV["LINKEDIN_OMNIAUTH_KEY"] = "7720527s8501rs"
+  ENV["LINKEDIN_OMNIAUTH_SECRET"] = "kXEtXvw5YhYQLtg3"
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
