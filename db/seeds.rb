@@ -7,9 +7,15 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 15.times do
-  FactoryGirl.create(:job_posting)
+  FactoryGirl.create(:job_post)
 end
 
 15.times do
-	FactoryGirl.create(:event)
+  FactoryGirl.create(:event)
 end
+
+test_user = FactoryGirl.build(:user, :email => "chrissie@gmail.com", :password => "password", :password_confirmation => "password")
+
+test_user.skip_confirmation!
+test_user.save
+

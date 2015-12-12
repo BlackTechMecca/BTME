@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :activity do
 
-    trait :job_posting do
-      postable_type JobPosting
+    trait :job_post do
+      postable_type JobPost
       postable_id 123
     end
   end
