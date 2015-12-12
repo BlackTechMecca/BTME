@@ -19,3 +19,14 @@ test_user = FactoryGirl.build(:user, :email => "chrissie@gmail.com", :password =
 test_user.skip_confirmation!
 test_user.save
 
+
+
+
+
+
+
+
+
+
+
+
