@@ -31,16 +31,6 @@ ActiveRecord::Schema.define(version: 20151211030451) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
-  create_table "job_postings", force: :cascade do |t|
-    t.text     "title"
-    t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "job_postings", ["user_id"], name: "index_job_postings_on_user_id"
-
   create_table "job_posts", force: :cascade do |t|
     t.text     "title"
     t.text     "description"

@@ -10,5 +10,4 @@ class CreateJobPosts < ActiveRecord::Migration
     end
     drop_table :job_postings
   end
-b
 end
