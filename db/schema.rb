@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209002716) do
+ActiveRecord::Schema.define(version: 20151211030451) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "postable_id"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20151209002716) do
   end
 
   add_index "job_postings", ["user_id"], name: "index_job_postings_on_user_id"
+
+  create_table "job_posts", force: :cascade do |t|
+    t.text     "title"
+    t.text     "description"
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

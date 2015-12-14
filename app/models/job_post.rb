@@ -1,4 +1,4 @@
-class JobPosting < ActiveRecord::Base
+class JobPost < ActiveRecord::Base
   include Postable
 
   belongs_to :user
