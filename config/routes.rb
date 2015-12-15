@@ -4,6 +4,8 @@
   
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  resources :users, only: [:index, :show, :edit, :update]
+
   get 'activity', to: 'activities#index'
 
   resources :events, only: [:show,:index,:create, :new]
