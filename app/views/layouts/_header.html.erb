@@ -11,7 +11,7 @@
                 <!-- Social Buttons -->
                 <div class="col-sm-5 text-right">
                                 <ul class="topbar-list list-inline">
-                                    <li>                        
+                                    <li>
                                         <a href="https://twitter.com/blacktechmecca" class="btn btn-social-icon btn-rw btn-primary btn-xs">
                                             <i class="fa fa-twitter"></i>
                                         </a>
@@ -21,12 +21,24 @@
                                         <a href="https://www.facebook.com/blacktechmecca"class="btn btn-social-icon btn-rw btn-primary btn-xs">
                                             <i class="fa fa-facebook"></i>
                                         </a>
-                                    </li><li><a data-toggle="modal" data-target="#login">Login</a></li><li><a href="pages-forms-register-login.html">Register</a></li>
+                                    </li>
+                                    <% unless current_user.present? %>
+                                        <li>
+                                            <%= link_to 'Login', new_user_session_path %>
+                                        </li>
+                                        <li>
+                                            <%= link_to 'Register', new_user_registration_path %>
+                                        </li>
+                                    <% else %>
+                                        <li>
+                                            <%= link_to 'Logout', destroy_user_session_path %>
+                                        </li>
+                                    <% end %>
                                 </ul>
                             </div>
-                        </div><!--/row --> 
-                    </div><!--/container header -->   
-                </div><!--/top bar -->   
+                        </div><!--/row -->
+                    </div><!--/container header -->
+                </div><!--/top bar -->
                 <!-- End Top Bar -->
 
                 <!-- Login -->
@@ -80,7 +92,7 @@
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-                                    </div><!-- /navbar header -->   
+                                    </div><!-- /navbar header -->
 
                                     <!-- Main Navigation - Explained in Documentation -->
                                     <nav class="navbar-collapse collapse navHeaderCollapse" role="navigation">
@@ -88,11 +100,11 @@
                                             <li> <%= link_to "Home", root_path %></li>
                                             <li> <%= link_to "About Us", about_path %></li>
                                             <li> <%= link_to "Events", events_path %> </li>
-                                        </ul><!-- /navbar right -->  
+                                        </ul><!-- /navbar right -->
                                     </nav><!-- /nav -->
                                 </div>
                             </div>
-                        </div><!-- /container header -->   
+                        </div><!-- /container header -->
                     </div><!-- /navbar -->
                 </div><!-- /navbar wrapper -->
                 <!-- End Navigation -->
