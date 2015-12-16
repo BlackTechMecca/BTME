@@ -5,7 +5,7 @@ RSpec.describe ActivitiesController, :type => :controller do
 
   before(:each) do
     15.times do
-      FactoryGirl.create(:job_posting)
+      FactoryGirl.create(:job_post)
     end
   end
 
