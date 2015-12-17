@@ -1,1 +1,25 @@
-<h1>Show Users</h1>
+<section class="content-40mg">
+	<div class="row">
+		<div class="col-sm-12">
+			<p class="lead text-center flipInY-animated flipInY animated">The <b><mark>Community</mark></b></p>
+			<hr style="width: 600px">
+		</div>
+	</div>
+	<div class="row">
+		<div class="containter">
+
+			<%= will_paginate %>
+
+			<ul class="users">
+				<% @users.each do |user| %>
+				<li>
+					<%= image_tag(user.image_url) %>
+					<%= link_to user.first_name, user %>
+				</li>
+				<% end %>
+			</ul>
+
+			<%= will_paginate %>
+		</div>
+	</div>
+</section>
