@@ -26,15 +26,16 @@
     <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css"> <!-- -->
 
     <!-- Stylesheets -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/style.css" rel="stylesheet" title="main-css"> <!-- -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"> <!-- --><!-- -->
     <link href="/assets/css/bootstrap-social.css" rel="stylesheet"> <!-- -->
     <link href="/assets/css/animate.min.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/owl.carousel.css" rel="stylesheet" > <!-- -->
+    <link href="/assets/css/owl.carousel.css" rel="stylesheet" >
+    <link href="/assets/css/owl.theme.css" rel="stylesheet" >
     <link href="/assets/css/jquery.snippet.css" rel="stylesheet"> <!-- -->
     <link href="/assets/css/buttons.css" rel="stylesheet"> <!-- -->
+    <link href="/assets/css/style.css" rel="stylesheet" title="main-css"> 
 
-    <link href="/assets/css/colors/dark-blue.css" rel="stylesheet">
+    <link href="/assets/css/colors/blue.css" rel="stylesheet">
     
     <link href="/assets/css/width-full.css" rel="stylesheet" title="width-full">
 
@@ -52,6 +53,9 @@
   	<!-- Begin Boxed or Fullwidth Layout -->
   <div id="bg-boxed">
   	<div class="boxed">
+        <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
 			<%= render 'layouts/header' %>
 			<%= yield %>
 			<%= render 'layouts/footer' %>
@@ -64,7 +68,7 @@
     <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.mixitup.min.js"></script>
     <script type="text/javascript" src="/assets/js/scrollReveal.js"></script>
-    <script type="text/javascript" src="/assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.snippet.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
@@ -169,5 +173,29 @@
         }); 
     }); 
     </script>
+
+    <script type="text/javascript">
+        $("#owl-demo").owlCarousel({
+            items : 3,
+            lazyLoad : true,
+            autoPlay: true,
+            navigation : true,
+            navigationText: [
+              "<i class='fa fa-angle-left'></i>",
+              "<i class='fa fa-angle-right'></i>"
+            ],
+            navigation : false
+      });
+
+        $('#feature .thumbnail').hover(
+            function(){
+                $(this).find('.caption').slideDown(250);
+            },
+            function(){
+                $(this).find('.caption').slideUp(250);
+            }
+        );
+    </script>
+
 </body>
 </html>
