@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :job_posts
+  belongs_to :user
 
   def full_name
     "#{self.first_name} #{self.last_name}"
