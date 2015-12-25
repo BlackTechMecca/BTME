@@ -66,7 +66,14 @@
                                         <ul class="nav navbar-nav navbar-right">
                                             <li> <%= link_to "Home", root_path %></li>
                                             <li> <%= link_to "About Us", about_path %></li>
-                                            <li> <%= link_to "Blog", blogs_path %> </li>
+                                            <li class="dropdown dropdown-main">
+                                                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Resources<span class="fa fa-angle-down dropdown-arrow">
+                                                </span></a>
+                                                <ul class="dropdown-menu dropdown-subhover">
+                                                    <li> <%= link_to "Blog", blogs_path %> </li>
+                                                    <li><a href="#">Press</a></li>
+                                                </ul>
+                                            </li>
                                             <li> <%= link_to "Contact Us", contact_path %></li>
                                         </ul><!-- /navbar right -->
                                     </nav><!-- /nav -->
