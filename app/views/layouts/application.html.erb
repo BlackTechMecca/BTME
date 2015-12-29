@@ -6,45 +6,19 @@
     <meta name="author" content="Myron Hicks" />
     <meta name="description" content="BlackTechMecca | Our mission is to transform Chicago into a Global Black Tech Mecca">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <%= csrf_meta_tags %>
+    
     <link href="/assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
-    <!-- Royal Preloader CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/css/royal_preloader.css"> <!-- -->
-    <!-- jQuery Files -->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- -->
-    <!-- Royal Preloader -->
-    <script type="text/javascript" src="/assets/js/royal_preloader.min.js"></script> <!-- -->
-    <!-- Revolution Slider CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css"> <!-- -->
-    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css"> <!-- -->
-    <!-- Revolution Slider Navigation CSS -->
-    <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css"> <!-- -->
 
-    <!-- Stylesheets -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet"> <!-- --><!-- -->
-    <link href="/assets/css/bootstrap-social.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/animate.min.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/owl.carousel.css" rel="stylesheet" >
-    <link href="/assets/css/owl.theme.css" rel="stylesheet" >
-    <link href="/assets/css/jquery.snippet.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/buttons.css" rel="stylesheet"> <!-- -->
-    <link href="/assets/css/style.css" rel="stylesheet" title="main-css"> 
-
-    <link href="/assets/css/colors/blue.css" rel="stylesheet">
-    
-    <link href="/assets/css/width-full.css" rel="stylesheet" title="width-full">
-
-    <!-- Icon Fonts -->
-    <link href="/assets/css/ionicons.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Magnific Popup -->
-    <link href='/assets/css/magnific-popup.css' rel='stylesheet' type='text/css'>
+    <%= render 'layouts/shim' %>
+    <%= render 'layouts/stylesheets' %>
+    <%= render 'layouts/analytics' %>
 
 </head>
 <body class="royal_preloader scrollreveal">
@@ -63,139 +37,6 @@
   </div><!-- /bg boxed-->
  <!-- End Boxed or Fullwidth Layout -->
 
-    <!-- Javascript Files -->
-    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script> <!-- -->
-    <script type="text/javascript" src="/assets/js/jquery.easing.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.mixitup.min.js"></script>
-    <script type="text/javascript" src="/assets/js/scrollReveal.js"></script>
-    <script type="text/javascript" src="/assets/js/owl.carousel.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.magnific-popup.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.snippet.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="/assets/js/activate-snippet.js"></script>
-    <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
-
-    <!-- On Scroll Animations - scrollReveal.js -->
-    <script>
-        var config = {
-        easing: 'hustle',
-        mobile:  true,
-        delay:  'onload'
-        }
-        window.sr = new scrollReveal( config );
-    </script>
-
-    <!-- Slider Revolution JS -->
-    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
-
-    <!-- Slider Revolution Extensions (Load Extensions only on Local File Systems The following part can be removed on Server for On Demand Loading) -->    
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
-
-    <!-- Slider Revolution Main -->
-    <script type="text/javascript">
-    jQuery(document).ready(function() { 
-       jQuery("#slider1").revolution({
-            sliderType:"standard",
-            startDelay:2500,
-            spinner:"spinner2",
-            sliderLayout:"auto",
-            viewPort:{
-               enable:false,
-               outof:'wait',
-               visible_area:'100%'
-            }
-            ,
-            delay:9000,
-            navigation: {
-                keyboardNavigation:"off",
-                keyboard_direction: "horizontal",
-                mouseScrollNavigation:"off",
-                onHoverStop:"off",
-                arrows: {
-                    style:"erinyen",
-                    enable:true,
-                    hide_onmobile:true,
-                    hide_under:600,
-                    hide_onleave:true,
-                    hide_delay:200,
-                    hide_delay_mobile:1200,
-                    tmp:'<div class="tp-title-wrap">    <div class="tp-arr-imgholder"></div>    <div class="tp-arr-img-over"></div> <span class="tp-arr-titleholder">{{title}}</span> </div>',
-                    left: {
-                        h_align:"left",
-                        v_align:"center",
-                        h_offset:30,
-                        v_offset:0
-                    },
-                    right: {
-                        h_align:"right",
-                        v_align:"center",
-                        h_offset:30,
-                        v_offset:0
-                    }
-                }
-                ,
-                touch:{
-                    touchenabled:"on",
-                    swipe_treshold : 75,
-                    swipe_min_touches : 1,
-                    drag_block_vertical:false,
-                    swipe_direction:"horizontal"
-                }
-                ,
-                bullets: {
-                    enable:true,
-                    hide_onmobile:true,
-                    hide_under:600,
-                    style:"hermes",
-                    hide_onleave:true,
-                    hide_delay:200,
-                    hide_delay_mobile:1200,
-                    direction:"horizontal",
-                    h_align:"center",
-                    v_align:"bottom",
-                    h_offset:0,
-                    v_offset:30,
-                    space:5
-                }
-            },
-            gridwidth:1240,
-            gridheight:497 
-        }); 
-    }); 
-    </script>
-
-    <script type="text/javascript">
-        $("#owl-demo").owlCarousel({
-            items : 3,
-            lazyLoad : true,
-            autoPlay: true,
-            navigation : true,
-            navigationText: [
-              "<i class='fa fa-angle-left'></i>",
-              "<i class='fa fa-angle-right'></i>"
-            ],
-            navigation : false
-      });
-
-        $('#feature .thumbnail').hover(
-            function(){
-                $(this).find('.caption').slideDown(250);
-            },
-            function(){
-                $(this).find('.caption').slideUp(250);
-            }
-        );
-    </script>
-
+    <%= render 'layouts/javascripts' %>
 </body>
 </html>

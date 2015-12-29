@@ -5,14 +5,14 @@
       <p class="text-muted">Get your weekly dose of black tech news and stay up to date with our activities.</p>
     </div>
     <div class="row">
-      <form>
+      <form action="subscribe" method="post">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">State/Country</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="State/Country">
+          <input type="text" name="location" class="form-control" id="exampleInputPassword1" placeholder="State/Country">
         </div>
         <button type="submit" style="width:100%;" class="btn btn-primary">Sign up</button>
       </form>

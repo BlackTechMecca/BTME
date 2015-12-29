@@ -8,5 +8,8 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def press
+  end
   
 end

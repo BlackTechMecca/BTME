@@ -18,8 +18,12 @@
 
   get 'contact' => 'home#contact'
 
+  get 'press' => 'home#press'
+
   devise_scope :user do
     get "signout", to: "users/sessions#destroy"
   end
 
+  post 'subscribe' => 'newsletter#subscribe'
+  
 end
