@@ -21,11 +21,16 @@
 
                         <div class="col-sm-6">
                             <div class="heading-footer"><h4>Sign up for the BTM Weekly Connect!</h4></div>
-                            <form action="subscribe" method="post" class="form-inline" role="form">
+                            <form action="/subscribers" method="post" class="form-inline" role="form">
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon">@</div>
-                                        <input class="form-control" name="email" type="email" placeholder="Enter email">
+                                        <input class="form-control" name="subscriber[email]" type="email" placeholder="Enter email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input class="form-control" name="subscriber[location]" type="text" placeholder="State/Country">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-rw btn-default ml15">Sign up</button>
