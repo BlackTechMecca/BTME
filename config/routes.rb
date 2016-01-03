@@ -1,5 +1,6 @@
   Rails.application.routes.draw do
 
+  resources :full_profiles
   resources :blogs, only: [:index, :show, :new, :edit, :create]
 
   # resources :job_posts

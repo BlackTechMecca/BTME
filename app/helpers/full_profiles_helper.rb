@@ -1,0 +1,2 @@
+module FullProfilesHelper
+end

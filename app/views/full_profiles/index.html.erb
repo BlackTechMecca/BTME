@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Full Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @full_profiles.each do |full_profile| %>
+      <tr>
+        <td><%= link_to 'Show', full_profile %></td>
+        <td><%= link_to 'Edit', edit_full_profile_path(full_profile) %></td>
+        <td><%= link_to 'Destroy', full_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Full profile', new_full_profile_path %>
