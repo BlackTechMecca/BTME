@@ -1,13 +1,21 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+
+  after_save :_update_full_profile_timestamp
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :job_posts
+  has_one :full_profile
   belongs_to :user
 
   def full_name
     "#{self.first_name} #{self.last_name}"
+  end
+
+  def _update_full_profile_timestamp
+    new_full_profile = full_profile || build_full_profile
+    new_full_profile.update_attribute(:last_modified_timestamp, Time.now)
   end
 
   def self.from_omniauth(auth)
