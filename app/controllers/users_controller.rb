@@ -36,6 +36,6 @@ class UsersController < ApplicationController
   	end
 
   	def user_params
-  		params.require(:user).permit(:role, :user_name)
+  		params.require(:user).permit(:role, :user_name, full_profile_attributes: [:proposal_comments_associations, :interests, :birthdate ])
   	end
 end

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :job_posts
   has_one :full_profile
+  accepts_nested_attributes_for :full_profile
   belongs_to :user
 
   def full_name
