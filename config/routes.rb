@@ -1,7 +1,5 @@
   Rails.application.routes.draw do
 
-  resources :blogs, only: [:index, :show, :new, :edit, :create]
-
   # resources :job_posts
 
   # devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
@@ -21,9 +19,8 @@
   get 'press' => 'home#press'
 
   # devise_scope :user do
-    # get "signout", to: "users/sessions#destroy"
+  #  get "signout", to: "users/sessions#destroy"
   # end
 
-  # post 'subscribe' => 'newsletter#subscribe'
   resources :subscribers
 end
