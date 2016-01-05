@@ -5,9 +5,9 @@
 
   # resources :job_posts
 
-  # devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  # resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update]
 
   # get 'activity', to: 'activities#index'
 
@@ -21,9 +21,9 @@
 
   get 'press' => 'home#press'
 
-  # devise_scope :user do
-    # get "signout", to: "users/sessions#destroy"
-  # end
+  devise_scope :user do
+    get "signout", to: "users/sessions#destroy"
+  end
 
   # post 'subscribe' => 'newsletter#subscribe'
   resources :subscribers

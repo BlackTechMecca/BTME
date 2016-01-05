@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @full_profile = @user.full_profile
   end
 
   def update

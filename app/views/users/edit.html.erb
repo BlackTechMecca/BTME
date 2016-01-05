@@ -5,6 +5,7 @@
     <div id="error_explanation">
       <h2><%= pluralize(@full_profile.errors.count, "error") %> prohibited this full_profile from being saved:</h2>
 
+
       <ul>
       <% @full_profile.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -13,6 +14,11 @@
     </div>
   <% end %>
 
+  <%= f.label :first_name %>:
+  <%= f.text_field :first_name %><br />
+
+  <%= f.label :last_name %>:
+  <%= f.text_field :last_name %><br />
   <div class="actions">
     <%= f.submit %>
   </div>
