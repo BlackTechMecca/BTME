@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def update
   	respond_to do |format|
-  		if @user.update(user_params)
+      if UserService.update(@user, user_params)
   			format.html {redirect_to @user, noce: 'User was successfully updated'}
   			format.json {render :show, status: :ok, location: @user}
   		else
@@ -37,6 +37,6 @@ class UsersController < ApplicationController
   	end
 
   	def user_params
-  		params.require(:user).permit(:role, :user_name, full_profile_attributes: [:proposal_comments_associations, :interests, :birthdate ])
+  		params.require(:user).permit(:username, :first_name, :last_name, full_profile: [:proposal_comments, :associations, :interests, :birthdate ])
   	end
 end
