@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151211030451) do
+ActiveRecord::Schema.define(version: 20151229215617) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "postable_id"
     t.string   "postable_type"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "lead"
+    t.text     "content"
+    t.string   "article_url"
+    t.string   "image_url"
+    t.string   "category"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -31,6 +42,13 @@ ActiveRecord::Schema.define(version: 20151211030451) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+  create_table "industries", force: :cascade do |t|
+    t.string   "description"
+    t.integer  "code"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "job_posts", force: :cascade do |t|
     t.text     "title"
     t.text     "description"
@@ -39,6 +57,15 @@ ActiveRecord::Schema.define(version: 20151211030451) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "subscribers", force: :cascade do |t|
+    t.string   "email"
+    t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscribers", ["email"], name: "index_subscribers_on_email", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -64,6 +91,7 @@ ActiveRecord::Schema.define(version: 20151211030451) do
     t.datetime "updated_at"
     t.string   "uid"
     t.string   "image_url"
+    t.integer  "industry_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

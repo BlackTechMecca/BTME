@@ -1,0 +1,55 @@
+<div class="header">
+	<div class="container">
+		<div class="row">
+			<!-- Page Title -->
+			<div class="col-sm-6 col-xs-12">
+				<h1>Blog</h1>
+			</div>
+
+			<!-- Breadcrumbs -->
+			<div class="col-sm-6"> 
+				<ol class="breadcrumb">
+					<li><span class="ion-home breadcrumb-home"></span><a href="index.html">Home</a></li>
+					<li>Blog</li>
+				</ol>
+			</div><!-- /column -->
+		</div><!-- /row -->  
+	</div><!-- /container -->  
+</div>
+
+<section class="mt40 mb40">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 mb20">
+				<p class="lead text-center flipInY-animated flipInY animated">
+					Article <b><mark>Grid</mark></b>
+				</p>
+			</div>
+		</div>
+		<%= will_paginate @blogs %>
+		<div class="row">
+			<% @blogs.each do |blog| %>
+			<div class="col-sm-6">
+				<div class="blog-post mb40">
+					<div class="view image-hover-1 no-margin">
+						<img class="img-responsive" alt="..." src="<%= blog.image_url %>">
+					</div>
+					<div class="blog-post-holder">
+						<ul class="list-inline posted-info">
+							<li>By Black Tech Mecca</li>
+							<li>In <a href="#"><%= blog.category %></a>
+							<li>Posted <%= blog.created_at %></li>
+						</li>
+						<hr class="mt15 mb10" align="left" style="width:50px;">
+						<h2><a href="#"><%= blog.title %></a></h2>
+						<p><%= blog.lead %>...</p>
+						<a class="btn btn-rw btn-primary mt10" href="#">Read more</a>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+		<%= will_paginate %>
+	</div>
+
+</section>

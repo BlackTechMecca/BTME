@@ -2,31 +2,33 @@ require 'rails_helper'
 
 RSpec.describe Event, :type => :model do 
 	let(:user) {FactoryGirl.create(:user, :first_name => "Sam", :last_name => "Smith")}
-	let(:event) do 
-		Event.create(name: "Chi-hacknight",
-					description: "Something will happen, hopefully",
-					user: user)
-	end
-
+	let(:event) {FactoryGirl.create(:event, :name=>"Chi-hacknight",:description => "A place where stuff happens",:user=>user)}
 
 	describe '#initialize' do 
-
-		it 'should have a title and descrpiton' do 
+		it '#initialize should set that proper characteristics' do 
 			expect(event.name).to eq("Chi-hacknight")
-		end
-
-		it 'belongs to a user' do 
+			expect(event.description).to eq("A place where stuff happens")
 			expect(event.user).to be_a User
-			expect(event.user.first_name).to eq "Sam"
 		end
 
-		xit 'create an associated activity' do 
-			expect(event.activity).to be_an Activity
+		it 'create an associated activity' do 
+			expect(event.activity).to be_a Activity
 		end
-
 	end
 
 
+	describe 'validations' do 
+		it 'validates that it has a user' do 
+			invalid_event = Event.create(name:"A presentation",description:"some some")
+			expect(invalid_event).to_not be_valid
+		end
+
+		it 'validates that it has a name' do 
+			invalid_event = Event.create(description:"something more",user:FactoryGirl.create(:user))
+			expect(invalid_event).to_not be_valid
+		end
+
+	end
 
 
 end

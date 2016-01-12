@@ -1,0 +1,62 @@
+<div class="header">
+	<div class="container">
+		<div class="row">
+		<!-- Page Title -->
+			<div class="col-sm-6 col-xs-12">
+				<h1>Blog</h1>
+			</div>
+
+			<!-- Breadcrumbs -->
+			<div class="col-sm-6">
+				<ol class="breadcrumb">
+					<li><span class="ion-home breadcrumb-home"></span><a href="index.html">Home</a></li>
+						<li>Resources</li>
+						<li>Blog</li>
+				</ol>
+			</div><!-- /column -->
+		</div><!-- /row -->  
+	</div><!-- /container -->  
+</div>
+
+<section class="mt40 mb40">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-8">
+      	<div class="blog-post">
+      	  <div class="view image-hover-1 no-margin">
+      	  	<img class="image-responsive" alt="..." src="<%= @blog.image_url %>">
+      	  </div>
+      	  <div class="blog-post-holder">
+      	  	<ul class="list-inline posted-info">
+      	  	  <li>By <a href="#">Black Tech Mecca</a></li>
+      	  	  <li>In <a href="#"><%= @blog.category %></a></li>
+      	  	  <li>Post <%= @blog.created_at %>
+      	  	</ul>
+      	  	<hr class="mt15 mb10" align="left" style="width:50px;">
+      	  	<h2><a href="#"><%= @blog.title %></a></h2>
+      	  	<p><%= @blog.content %></p>
+      	  </div>
+      	  <div class="blog-comment mt30"></div>
+      	  <div class="panel panel-default no-margin"></div>
+      	</div>
+      </div>
+
+      <div class="col-sm-4">
+      	<div class="content-box content-box-bordered mt30-xs mb30">
+      		<span class="ion-beaker bordered-icon-color bordered-icon-sm"></span>
+      		<h4 class="pt15">Our Blog</h4>
+      		<p class="no-margin">Lorem ipsum dolor sit amet, consec tetur adipiscing elit. Integer a elit turpis. Phasellus non varius mi. Nullam elementum tincidunt massa, a pulvinar leo ultricies ut.</p>
+      	</div>
+      	<div class="blog-heading"><h3>Navigate</h3></div>
+      	<ul class="nav nav-pills nav-stacked mb30">
+      		<li><%= link_to "Home", root_path %></li>
+      		<li><%= link_to "About Us", about_path %></li>
+      		<li class="active"><%= link_to "Blog", @blog_path %></li>
+      		<li><%= link_to "Contact Us", contact_path %></li>
+      	</ul>
+      </div>
+
+    </div>
+  </div>
+</section>
