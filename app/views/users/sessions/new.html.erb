@@ -6,6 +6,9 @@
               <div class="panel no-margin panel-default">
                   <div class="panel-heading">Login to your account</div>
                   <div class="panel-body">
+                      <%= link_to user_omniauth_authorize_path(:provider => :linkedin), :class => "btn btn-rw btn-primary" do %>
+                        <span>Login with LinkedIn <i class="fa fa-linkedin"></i></span>
+                      <% end %>
                       <form role="form">
                           <div class="form-group">
                               <div class="input-group">
@@ -37,6 +40,9 @@
               <div class="panel no-margin panel-default">
                   <div class="panel-heading">Create an account</div>
                   <div class="panel-body">
+                      <%= link_to user_omniauth_authorize_path(:provider => :linkedin), :class => "btn btn-rw btn-primary" do %>
+                        <span>Register with LinkedIn <i class="fa fa-linkedin"></i></span>
+                      <% end %>
                       <form role="form">
                           <div class="form-group">
                               <div class="input-group">
@@ -81,68 +87,3 @@
 </div>
 <!-- -->
 
-<div class="container">
-  <div class="row">
-  <!-- Begin Login -->
-    <div class="col-sm-6">
-      <div class="panel no-margin panel-default">
-        <div class="panel-heading">Login to your account</div>
-          <div class="panel-body">
-            <form role="form">
-              <div class="form-group">
-
-                <div class="input-group">
-                  <div class="input-group-addon"><span style="font-size:9px;" class="ion-android-mail"></span></div>
-                    <input type="email" placeholder="Enter email" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="input-group">
-                    <div class="input-group-addon"><span class="ion-ios7-locked"></span></div>
-                    <input type="password" placeholder="Password" id="exampleInputPassword2" class="form-control">
-                  </div>
-                </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Remember me
-                  </label>
-                </div>
-
-                <hr class="mb20 mt15">
-                <button class="btn btn-rw btn-primary" type="submit">Log in</button> &nbsp;&nbsp;&nbsp;<small><a href="#">Forgot your password?</a></small>
-            </form><!-- /form -->
-        </div><!-- /panel body -->
-      </div><!-- /panel -->
-  </div><!-- /column-->
-  <!-- End Login -->
-</div> <!-- End Row -->
-</div> <!-- End Container -->
-
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-<!--
-<%= render "users/shared/links" %>-->
