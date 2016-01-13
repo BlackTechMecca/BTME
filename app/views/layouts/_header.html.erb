@@ -22,7 +22,7 @@
                                             <i class="fa fa-facebook"></i>
                                         </a>
                                     </li>
-                                    <% if current_user.present? %>
+                                    <% if user_signed_in? && current_user.present? %>
                                         <li>
                                             <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
                                         </li>
